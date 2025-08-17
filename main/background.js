@@ -144,11 +144,9 @@ async function startMonitoring(shopId) {
     
     // Initial check
     await checkOrders(shopId);
-    
-    // Set up interval for every 5 seconds (testing)
     monitoringInterval = setInterval(() => {
         checkOrders(shopId);
-    }, 5000);
+    }, 45000);
 }
 
 // Stop monitoring
@@ -230,5 +228,6 @@ chrome.runtime.onInstalled.addListener(async () => {
 chrome.runtime.onConnect.addListener((port) => {
     console.log('🔗 Port connected');
 });
+
 
 console.log('🎯 Background script loaded and ready');
