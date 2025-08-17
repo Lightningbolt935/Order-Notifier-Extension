@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Order Notification Extension 3.0",
+    "version": "1.0",
+    "description": "Keep your shop active and get notified of new orders",
+    "permissions": [
+        "storage",
+        "offscreen",
+        "activeTab"
+    ],
+    "host_permissions": [
+        "https://getshopnotificationcount-snbci4upja-uc.a.run.app/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_title": "Order Notifications"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": ["notification.mp3", "notify.mp3", "offscreen.html"],
+            "matches": ["<all_urls>"]
+        }
+    ],
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    }
+}
